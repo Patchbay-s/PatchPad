@@ -208,4 +208,9 @@ if __name__ == "__main__":
     try:
         main()
     except RuntimeError as error:
-        fail(str(error))
+        hint = ""
+        if "→ 403" in str(error):
+            hint = ("\nLa clé API doit avoir le rôle « App Manager » ou « Admin » pour modifier la fiche "
+                    "(App Store Connect › Utilisateurs et accès › Intégrations). Le rôle « Développeur » "
+                    "suffit pour envoyer un build, pas pour les métadonnées.")
+        fail(str(error) + hint)
