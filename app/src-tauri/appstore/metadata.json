@@ -1,0 +1,31 @@
+{
+  "bundleId": "com.patchbay.patchpad",
+  "sku": "PatchPad",
+  "primaryLocale": "fr-FR",
+  "primaryCategory": "UTILITIES",
+  "secondaryCategory": "DEVELOPER_TOOLS",
+  "copyright": "2026 Patchbay's",
+  "reviewNotes": "PatchPad tests game controllers. To see live data, connect a Sony DualShock 4 (USB or Bluetooth) or an Xbox Wireless Controller (Bluetooth). Without a controller the app shows \"No controller detected\".\n\nEntitlements: com.apple.security.device.usb and com.apple.security.device.bluetooth are used to read controller input (HID reports); com.apple.security.files.user-selected.read-write is used to save the PDF/HTML test report where the user chooses. The app makes no network connection and collects no data.",
+  "locales": {
+    "fr-FR": {
+      "name": "PatchPad",
+      "subtitle": "Testeur de manettes",
+      "privacyPolicyUrl": "https://github.com/Patchbay-s/PatchPad/blob/main/PRIVACY.md",
+      "supportUrl": "https://github.com/Patchbay-s/PatchPad/issues",
+      "marketingUrl": "https://github.com/Patchbay-s/PatchPad",
+      "keywords": "manette,joystick,gamepad,drift,stick,gâchette,vibration,gyroscope,pavé tactile,test,diagnostic",
+      "promotionalText": "Testez chaque bouton, stick, gâchette et capteur de votre manette en temps réel, détectez le drift, puis exportez un rapport PDF.",
+      "description": "PatchPad teste tout ce que votre manette expose, en temps réel, et vous dit ce qui fonctionne.\n\nCompatible avec la DualShock 4 de Sony (USB et Bluetooth) et les manettes Xbox One / Series (Bluetooth).\n\n• Vue d'ensemble : chaque bouton s'allume quand vous l'appuyez, les sticks montrent leur position et leur trace, les gâchettes leur course analogique.\n• Sticks : nuage de points, circularité, valeur au repos, détection du drift avec seuil réglable et zone morte conseillée.\n• Gâchettes : vérifiez qu'elles reviennent à zéro et atteignent 100 %.\n• Pavé tactile (DualShock 4) : deux doigts suivis avec leur trace, clic du pavé.\n• Mouvement (DualShock 4) : gyroscope et accéléromètre calibrés, courbes en direct, indicateur d'orientation, recalibrage du zéro.\n• Sorties : vibration gauche, droite ou les deux, couleur de la barre lumineuse.\n• Fréquence de rapport en Hz et journal des événements.\n\nMode rapport : un test guidé coche automatiquement chaque bouton appuyé et chaque vérification, puis exporte un rapport PDF ou HTML avec les valeurs mesurées. Idéal pour contrôler une manette avant de l'acheter ou de la revendre, ou après une réparation.\n\nPatchPad fonctionne entièrement sur votre Mac : aucune donnée collectée, aucune connexion réseau. Interface en français et en anglais, thème clair et sombre.\n\nPatchPad fait partie de la suite open source Patchbay's (licence GPL-3.0). Sony, DualShock et Xbox sont des marques de leurs propriétaires respectifs ; PatchPad n'est ni affilié ni approuvé par eux."
+    },
+    "en-US": {
+      "name": "PatchPad",
+      "subtitle": "Game controller tester",
+      "privacyPolicyUrl": "https://github.com/Patchbay-s/PatchPad/blob/main/PRIVACY.md",
+      "supportUrl": "https://github.com/Patchbay-s/PatchPad/issues",
+      "marketingUrl": "https://github.com/Patchbay-s/PatchPad",
+      "keywords": "controller,joystick,gamepad,drift,stick,trigger,vibration,gyroscope,touchpad,test,diagnostic",
+      "promotionalText": "Test every button, stick, trigger and sensor of your controller in real time, detect stick drift, then export a PDF report.",
+      "description": "PatchPad tests everything your controller exposes, in real time, and tells you what works.\n\nCompatible with Sony's DualShock 4 (USB and Bluetooth) and Xbox One / Series controllers (Bluetooth).\n\n• Overview: every button lights up when pressed, sticks show their position and trail, triggers their analog travel.\n• Sticks: point cloud, circularity, rest value, drift detection with an adjustable threshold and a suggested dead zone.\n• Triggers: check that they return to zero and reach 100%.\n• Touchpad (DualShock 4): two fingers tracked with their trails, touchpad click.\n• Motion (DualShock 4): calibrated gyroscope and accelerometer, live charts, orientation indicator, zero recalibration.\n• Outputs: left, right or both vibration motors, light bar color.\n• Report rate in Hz and event log.\n\nReport mode: a guided test automatically ticks every pressed button and every check, then exports a PDF or HTML report with the measured values. Ideal to check a controller before buying or selling it, or after a repair.\n\nPatchPad runs entirely on your Mac: no data collected, no network connection. French and English interface, light and dark theme.\n\nPatchPad is part of the open source Patchbay's suite (GPL-3.0 license). Sony, DualShock and Xbox are trademarks of their respective owners; PatchPad is not affiliated with or endorsed by them."
+    }
+  }
+}

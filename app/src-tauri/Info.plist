@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Manettes Bluetooth : macOS peut demander l'autorisation Bluetooth ; sans cette clé,
+       l'accès serait refusé (voire l'app arrêtée) au lieu d'afficher la demande. -->
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>PatchPad a besoin du Bluetooth pour lire et tester les manettes appairées sans fil.</string>
+  <!-- Aucun chiffrement : exemption d'export (App Store Connect). -->
+  <key>ITSAppUsesNonExemptEncryption</key>
+  <false/>
+</dict>
+</plist>

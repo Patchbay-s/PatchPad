@@ -145,6 +145,19 @@ cd app && npx tauri dev     # lancer l'application
 cd app && npx tauri build   # produire les paquets de la plateforme courante
 ```
 
+### Mac App Store (mainteneurs)
+
+L'édition Mac App Store tourne dans le bac à sable d'Apple, avec les entitlements USB, Bluetooth
+et fichiers choisis par l'utilisateur ([`appstore/Entitlements.plist.in`](app/src-tauri/appstore/Entitlements.plist.in)).
+
+```sh
+app/scripts/release-appstore.sh --upload   # .pkg signé, envoyé à App Store Connect
+app/scripts/appstore_metadata.py           # textes, catégories et URLs (appstore/metadata.json)
+```
+
+Incrémentez `app/src-tauri/appstore/build-number` avant chaque envoi. Identifiants : voir
+[`.env.example`](.env.example). Politique de confidentialité : [PRIVACY.md](PRIVACY.md).
+
 ### Architecture
 
 ```text
