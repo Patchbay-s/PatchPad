@@ -190,16 +190,24 @@ def main():
                   if version_id != "dry-run" else None)
     except RuntimeError:
         detail = None
-    if detail and detail.get("data"):
-        detail_id = detail["data"]["id"]
-        client.request("PATCH", f"/v1/appStoreReviewDetails/{detail_id}", {"data": {
-            "type": "appStoreReviewDetails", "id": detail_id, "attributes": {"notes": meta["reviewNotes"]}}})
-    else:
-        client.request("POST", "/v1/appStoreReviewDetails", {"data": {
-            "type": "appStoreReviewDetails", "attributes": {"notes": meta["reviewNotes"]},
-            "relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": version_id}}},
-        }})
-    print("Notes pour la revue : OK")
+    try:
+        if detail and detail.get("data"):
+            detail_id = detail["data"]["id"]
+            client.request("PATCH", f"/v1/appStoreReviewDetails/{detail_id}", {"data": {
+                "type": "appStoreReviewDetails", "id": detail_id, "attributes": {"notes": meta["reviewNotes"]}}})
+        else:
+            client.request("POST", "/v1/appStoreReviewDetails", {"data": {
+                "type": "appStoreReviewDetails", "attributes": {"notes": meta["reviewNotes"]},
+                "relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": version_id}}},
+            }})
+        print("Notes pour la revue : OK")
+    except RuntimeError as error:
+        # Une fois la fiche de revue créée, Apple exige les coordonnées de contact à chaque
+        # modification : elles se saisissent dans App Store Connect, pas dans ce dépôt.
+        if "→ 409" not in str(error):
+            raise
+        print("Notes pour la revue : non mises à jour — renseignez d'abord les coordonnées de contact "
+              "dans App Store Connect (Informations pour la vérification de l'app), puis relancez.")
     print("Terminé. Restent à compléter dans App Store Connect : captures d'écran, confidentialité de "
           "l'app (« Aucune donnée collectée »), prix, classification par âge, coordonnées de contact.")
 

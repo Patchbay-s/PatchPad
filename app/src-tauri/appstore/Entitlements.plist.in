@@ -6,6 +6,11 @@
 <dict>
   <key>com.apple.security.app-sandbox</key>
   <true/>
+  <!-- Indispensable à la vue web (WKWebView) : sans lui, WebKit ne peut ni charger l'interface ni
+       dialoguer avec le cœur Rust (IPC http://ipc.localhost), et la fenêtre reste noire.
+       PatchPad n'établit aucune connexion Internet. -->
+  <key>com.apple.security.network.client</key>
+  <true/>
   <!-- Manettes branchées en USB (rapports HID de la DualShock 4, manettes via IOKit). -->
   <key>com.apple.security.device.usb</key>
   <true/>

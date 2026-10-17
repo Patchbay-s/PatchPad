@@ -5,7 +5,7 @@
   "primaryCategory": "UTILITIES",
   "secondaryCategory": "DEVELOPER_TOOLS",
   "copyright": "2026 Patchbay's",
-  "reviewNotes": "PatchPad tests game controllers. To see live data, connect a Sony DualShock 4 (USB or Bluetooth) or an Xbox Wireless Controller (Bluetooth). Without a controller the app shows \"No controller detected\".\n\nEntitlements: com.apple.security.device.usb and com.apple.security.device.bluetooth are used to read controller input (HID reports); com.apple.security.files.user-selected.read-write is used to save the PDF/HTML test report where the user chooses. The app makes no network connection and collects no data.",
+  "reviewNotes": "PatchPad tests game controllers. To see live data, connect a Sony DualShock 4 (USB or Bluetooth) or an Xbox Wireless Controller (Bluetooth). Without a controller the app shows \"No controller detected\".\n\nEntitlements: com.apple.security.device.usb and com.apple.security.device.bluetooth are used to read controller input (HID reports); com.apple.security.files.user-selected.read-write is used to save the PDF/HTML test report where the user chooses; com.apple.security.network.client is required by the embedded web view (WKWebView) that renders the interface and talks to the app's own local process — the app never connects to the Internet. The app makes no network connection and collects no data.",
   "locales": {
     "fr-FR": {
       "name": "PatchPad",
