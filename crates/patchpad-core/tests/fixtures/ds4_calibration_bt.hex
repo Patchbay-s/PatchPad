@@ -1,0 +1,4 @@
+# Feature 0x05 (BT) : calibration IMU, CRC valide
+05 fd ff 02 00 01 00 60 22 56 22 65 22 b4 dd 96
+dd a5 dd 1c 02 1c 02 08 20 0c e0 3a 20 2a e0 1c
+20 02 e0 00 00 14 8c 1a f9

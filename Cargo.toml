@@ -1,0 +1,36 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/patchpad-core",
+    "app/src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-only"
+publish = false
+
+[workspace.dependencies]
+patchpad-core = { path = "crates/patchpad-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+# `macos-shared-device` : ouverture non exclusive sous macOS (sinon hidapi « saisit » la
+# manette et les autres applications, gilrs compris, ne la voient plus).
+hidapi = { version = "2.6", features = ["macos-shared-device"] }
+# XInput sous Windows (au lieu de Windows.Gaming.Input), comme demandé par le cahier des charges.
+gilrs = { version = "0.11", default-features = false, features = ["xinput"] }
+crc32fast = "1.4"
+nusb = "0.2"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+cast_possible_truncation = "deny"
+cast_sign_loss = "deny"
+cast_possible_wrap = "deny"

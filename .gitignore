@@ -1,0 +1,32 @@
+# --- OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# --- Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.key
+*.pem
+
+# --- Rust / Node / Tauri build output
+target/
+node_modules/
+dist/
+app/src-tauri/gen/
+
+# --- Packages
+*.dmg
+*.msi
+*.exe
+*.AppImage
+*.deb
+
+# --- Local tool settings
+.claude/settings.local.json
+.claude/worktrees/

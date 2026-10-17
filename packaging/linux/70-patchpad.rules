@@ -1,0 +1,17 @@
+# PatchPad : accès hidraw aux manettes Sony DualShock 4 pour l'utilisateur de la session.
+# PatchPad: hidraw access to Sony DualShock 4 controllers for the logged-in user.
+#
+# Installation :
+#   sudo install -m 644 70-patchpad.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+# Puis débranchez / rebranchez la manette (ou reconnectez-la en Bluetooth).
+
+# USB (et adaptateur sans fil 0ba0) : attributs du périphérique USB parent.
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="05c4", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="09cc", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="0ba0", TAG+="uaccess"
+
+# Bluetooth : pas d'attributs USB, on reconnaît le nom du périphérique HID parent
+# (bus 0005 = Bluetooth, VID:PID en majuscules).
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", KERNELS=="0005:054C:05C4.*", TAG+="uaccess"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", KERNELS=="0005:054C:09CC.*", TAG+="uaccess"
