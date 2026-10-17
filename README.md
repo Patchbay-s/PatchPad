@@ -98,6 +98,7 @@ rythme des changements, pas la fréquence de rapport du matériel.
 
 ```sh
 brew tap Patchbay-s/patchpad
+brew trust Patchbay-s/patchpad   # exigé par les versions récentes de Homebrew
 brew install --cask patchpad
 ```
 
@@ -255,6 +256,7 @@ hardware report rate.
 
 ```sh
 brew tap Patchbay-s/patchpad
+brew trust Patchbay-s/patchpad   # required by recent Homebrew versions
 brew install --cask patchpad
 ```
 
