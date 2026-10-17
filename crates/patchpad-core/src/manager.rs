@@ -271,11 +271,13 @@ pub type SnapshotSink = Box<dyn FnMut(Snapshot) + Send>;
 
 /// Backends par défaut, par ordre de priorité.
 pub fn default_backends() -> Vec<Box<dyn ControllerBackend>> {
-    let mut backends: Vec<Box<dyn ControllerBackend>> =
-        vec![Box::new(crate::ds4::backend::Ds4Backend::new()), Box::new(crate::gilrs_backend::GilrsBackend::new())];
-    #[cfg(target_os = "macos")]
-    backends.push(Box::new(crate::xbox_mac::XboxUsbProbe::new()));
-    backends
+    vec![
+        Box::new(crate::ds4::backend::Ds4Backend::new()),
+        Box::new(crate::gilrs_backend::GilrsBackend::new()),
+        // macOS : repère les manettes Xbox branchées en USB (GIP, illisibles) pour l'expliquer.
+        #[cfg(target_os = "macos")]
+        Box::new(crate::xbox_mac::XboxUsbProbe::new()),
+    ]
 }
 
 pub struct Manager {
