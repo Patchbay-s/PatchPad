@@ -30,3 +30,7 @@ app/src-tauri/gen/
 # --- Local tool settings
 .claude/settings.local.json
 .claude/worktrees/
+
+# --- Python
+__pycache__/
+*.pyc
